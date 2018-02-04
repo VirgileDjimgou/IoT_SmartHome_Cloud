@@ -1,6 +1,3 @@
-# IoT_SmartHome_Cloud
-(FH Pforzheim) Cloud-IoT Projekt : Entwicklung einer Android App zur Visualisierung von emulierten Sensordaten durch einen cloud Environenment..
-
 <span id="result_box" class="anchor"></span>Dieser Dokumentation
 beschreibt eine Fallstudie zum Erstellen eines Smart Home mit Raspberry
 Pi-Gerät und die in einen Cloud Umgebung integriet ist . Wir haben
