@@ -6,7 +6,7 @@ package com.msys.androidthing;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
- * Chokkar
+ * Created by chichikolon on 01/23/2018.
  */
 @IgnoreExtraProperties
 public class Config {

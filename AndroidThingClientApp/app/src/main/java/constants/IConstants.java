@@ -1,7 +1,6 @@
 package constants;
-
 /**
- * Created by Chokkar on 22/12/2016.
+ * Created by chichikolon on 01/23/2018.
  */
 
 public interface IConstants {

@@ -16,9 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.IOException;
 
 
-
 /**
- * Chokkar
+ * Created by chichikolon on 01/23/2018.
  */
 
 public class HomeActivity extends AppCompatActivity {

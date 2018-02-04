@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
 
 
-        final IProfile profile = new ProfileDrawerItem().withName("Chokkar").withEmail("chokkar.g@gmail.com").withIcon("https://avatars3.githubusercontent.com/u/1476232?v=3&s=460").withIdentifier(100);
+        final IProfile profile = new ProfileDrawerItem().withName("Chichikolon").withEmail("virgiledjimgou@gmail.com").withIcon("https://github.com/chichikolon/IoT_SmartHome_Cloud").withIdentifier(100);
 
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()

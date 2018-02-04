@@ -23,7 +23,7 @@ import com.google.android.things.pio.PeripheralManagerService;
 import java.util.List;
 
 /**
- * Chokkar
+ * Created by chichikolon on 01/23/2018.
  */
 @SuppressWarnings("WeakerAccess")
 public class BoardDefaults {
