@@ -3,8 +3,7 @@ package com.msys.androidthing;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
- * Created by Ravi Tamada on 07/10/16.
- * www.androidhive.info
+ * Created by chichikolon on 01/23/2018.
  */
 
 @IgnoreExtraProperties

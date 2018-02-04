@@ -32,8 +32,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Matsya Technologies on 11/4/2016.
- *
+ * Created by chichikolon on 01/23/2018.
  */
 public class NotificationUtils {
 

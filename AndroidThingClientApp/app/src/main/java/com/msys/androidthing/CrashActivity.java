@@ -11,9 +11,7 @@ import android.widget.CheckBox;
 
 import com.google.firebase.crash.FirebaseCrash;
 
-/**
- * Created by Chokkar on 12/23/2016.
- */
+
 
 public class CrashActivity extends AppCompatActivity {
     private static final String TAG = CrashActivity.class.getSimpleName();

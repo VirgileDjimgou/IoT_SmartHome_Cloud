@@ -28,7 +28,7 @@ import com.msys.androidthing.service.MyUploadService;
 import java.util.Locale;
 
 /**
- * Created by Chokkar on 12/22/2016.
+ * Created by chichikolon on 01/23/2018.
  */
 
 public class StorageActivity extends AppCompatActivity {

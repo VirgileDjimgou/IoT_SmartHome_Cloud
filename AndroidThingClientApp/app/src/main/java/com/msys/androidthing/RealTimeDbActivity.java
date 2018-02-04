@@ -18,9 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 /**
- * Created by Chokkar on 12/22/2016.
+ * Created by chichikolon on 01/23/2018.
  */
-
 public class RealTimeDbActivity extends AppCompatActivity {
     private static final String TAG = RealTimeDbActivity.class.getSimpleName();
     private TextView txtDetails;

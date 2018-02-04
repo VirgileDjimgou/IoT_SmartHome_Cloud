@@ -9,7 +9,7 @@ import com.firebase.client.Firebase;
 import com.pixplicity.easyprefs.library.Prefs;
 
 /**
- * Created by Chokkar on 22/12/2016.
+ * Created by chichikolon on 01/23/2018.
  */
 
 public class LetsApplication extends Application {

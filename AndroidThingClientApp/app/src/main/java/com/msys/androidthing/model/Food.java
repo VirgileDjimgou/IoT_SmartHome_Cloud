@@ -1,7 +1,7 @@
 package com.msys.androidthing.model;
 
 /**
- * Created by Chokkar on 12/23/2016.
+ * Created by chichikolon on 01/23/2018.
  */
 
 public class Food {

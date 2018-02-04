@@ -20,9 +20,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.msys.androidthing.MainActivity;
 import com.msys.androidthing.R;
-
 /**
- * Service to handle uploading files to Firebase Storage.
+ * Created by chichikolon on 01/23/2018.
  */
 public class MyUploadService extends MyBaseTaskService {
 

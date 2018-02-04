@@ -1,9 +1,8 @@
 package com.msys.androidthing;
 
 import com.google.firebase.database.IgnoreExtraProperties;
-
 /**
- * Created by Chokkar on 28/12/2016.
+ * Created by chichikolon on 01/23/2018.
  */
 
 @IgnoreExtraProperties
