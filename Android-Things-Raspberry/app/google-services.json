@@ -39,9 +39,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:236411372473:android:282465c258808933",
+        "mobilesdk_app_id": "1:236411372473:android:0d0da29167bbb14e",
         "android_client_info": {
-          "package_name": "com.FhPforzheim.androidthing"
+          "package_name": "com.fh.androidthing"
         }
       },
       "oauth_client": [

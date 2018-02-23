@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-Things-Raspberry.iml" filepath="$PROJECT_DIR$/Android-Things-Raspberry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SenseLibrary/SenseLibrary.iml" filepath="$PROJECT_DIR$/SenseLibrary/SenseLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

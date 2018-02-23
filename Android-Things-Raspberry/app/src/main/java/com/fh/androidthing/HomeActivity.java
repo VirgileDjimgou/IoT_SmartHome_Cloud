@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.google.android.things.contrib.driver.sensehat.LedMatrix;
+
 import com.google.android.things.pio.Gpio;
 import com.google.android.things.pio.PeripheralManagerService;
 import com.google.firebase.database.DataSnapshot;
@@ -14,13 +14,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.android.things.contrib.driver.sensehat.SenseHat;
 
 import java.io.IOException;
 
 // import sense hat lib  ...
 // import the SenseHat driver
 
-import com.google.android.things.contrib.driver.sensehat.SenseHat;
+import com.google.android.things.contrib.driver.sensehat.LedMatrix;
 
 
 /**
@@ -48,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         getDataInit();
         try{
             this.display = SenseHat.openDisplay();
-            this.display.draw(Color.MAGENTA);
+            this.display.draw(Color.RED);
         }catch (Exception ex)
         {
             ex.printStackTrace();

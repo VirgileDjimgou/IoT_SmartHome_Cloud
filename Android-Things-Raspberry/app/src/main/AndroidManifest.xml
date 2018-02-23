@@ -14,7 +14,7 @@
 
         <uses-library android:name="com.google.android.things" />
 
-        <activity android:name="com.fh.androidthing.HomeActivity">
+        <activity android:name="com.fh.androidthing.demoMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,7 +22,7 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.IOT_LAUNCHER"/>
+                <category android:name="android.intent.category.IOT*_LAUNCHER"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
 
