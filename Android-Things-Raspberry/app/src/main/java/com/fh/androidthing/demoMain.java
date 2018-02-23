@@ -3,6 +3,9 @@ package com.fh.androidthing;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -16,6 +19,8 @@ import com.fh.androidthing.gui.IGui;
 import com.fh.androidthing.uitils.NetworkUtils;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
+
+import java.io.IOException;
 
 /**
  * Skeleton of an Android Things activity.
@@ -40,6 +45,8 @@ public class demoMain extends Activity {
 
     private JoystickDemo joystickDemo;
     private TextScrollDemo textScrollDemo;
+    private  SenseHat senseHat;
+    private SensorManager sensorManager;
 
     private HumidityTemperatureDemo HumiditySensor;
     private TextView cursorCoordTextView;
@@ -68,17 +75,26 @@ public class demoMain extends Activity {
 
 
             // ********************
-            SensorManager sensorManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
-            SenseHat senseHat = SenseHat.init(sensorManager);
-            final LedMatrix ledMatrix = senseHat.getLedMatrix();
-            ledMatrix.draw(Color.RED);    // trun off
+
+            try{
+                this.sensorManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
+                this.senseHat = SenseHat.init(sensorManager);
+                // final LedMatrix ledMatrix = senseHat.getLedMatrix();
+                // ledMatrix.draw(Color.RED);    // trun off
+                // Simple Humidity Sensor demo ...
+                HumidityTemperatureDemo();
+
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
 
 
             /** Text-Scrolling
              */
-            this.textScrollDemo = new TextScrollDemo(sensorManager, this.getAssets());
+            //this.textScrollDemo = new TextScrollDemo(sensorManager, this.getAssets());
 
             // Simple Joystick demo
+            /*
              this.joystickDemo = new JoystickDemo(sensorManager, new IGui() {
             @Override public void setCursorInformations(final String xCoord, final String yCoord, final String color)
 
@@ -95,9 +111,7 @@ public class demoMain extends Activity {
             }
             });
 
-
-             // Simple Humidity Sensor demo ...
-            this.HumiditySensor = new HumidityTemperatureDemo(sensorManager);
+*/
 
 
 
@@ -137,6 +151,44 @@ public class demoMain extends Activity {
             String ex = ExceptionUtils.getStackTrace(e);
             this.exceptionTextView.setText(ex);
         }
+    }
+
+
+
+    public void HumidityTemperatureDemo() throws IOException {
+
+        // this.sensorManager = sensorManager;
+
+
+        // SenseHat senseHat = SenseHat.init(sensorManager);
+
+        SensorEventListener humidityListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                System.out.println("HUM-Value:" + event.values[0]);
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+                System.out.println("HUM-ACUU:" + sensor + " acc:''" + accuracy);
+            }
+        };
+
+        SensorEventListener temperatureListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                System.out.println("TEMP-Value:" + event.values[0]);
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+                System.out.println("TEMP-ACUU:" + sensor + " acc:''" + accuracy);
+            }
+        };
+
+
+        this.senseHat.addHumidityTempatureSensorListener(humidityListener, temperatureListener);
+
     }
 
 }
