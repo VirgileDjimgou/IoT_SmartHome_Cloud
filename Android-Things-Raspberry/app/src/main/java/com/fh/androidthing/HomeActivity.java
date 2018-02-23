@@ -1,10 +1,12 @@
 package com.fh.androidthing;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.google.android.things.contrib.driver.sensehat.LedMatrix;
 import com.google.android.things.pio.Gpio;
 import com.google.android.things.pio.PeripheralManagerService;
 import com.google.firebase.database.DataSnapshot;
@@ -14,6 +16,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
+
+// import sense hat lib  ...
+// import the SenseHat driver
+
+import com.google.android.things.contrib.driver.sensehat.SenseHat;
 
 
 /**
@@ -29,6 +36,8 @@ public class HomeActivity extends AppCompatActivity {
     private Gpio mLedGpio;
 
     private DatabaseReference mDatabase;
+    private LedMatrix display;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +46,17 @@ public class HomeActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         getDataInit();
+        try{
+            this.display = SenseHat.openDisplay();
+            this.display.draw(Color.MAGENTA);
+        }catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
     }
+
+
 
     @Override
     protected void onDestroy() {
