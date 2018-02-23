@@ -7,19 +7,30 @@
     android:orientation="vertical"
     tools:context="com.fh.androidthing.demoMain">
 
+
+
     <TextView
         android:id="@+id/ipAdressTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:text="myIP" />
+
+    <TextView
+        android:id="@+id/dev_nam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="Armand Djiokeng IOT Projekt" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="15dp"
+        android:layout_marginLeft="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="WELCOME to Android Thinks - Demo V4"
+        android:text="Demo AUtomation (2018-projekt fh Pforzheim)"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -32,6 +43,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
+        android:layout_marginLeft="30dp"
         android:layout_below="@+id/cursorColorTextView"
         android:layout_toEndOf="@+id/textView2"
         android:text="Cursor position:"
@@ -42,6 +54,7 @@
         android:id="@+id/cursorCoordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:layout_alignEnd="@+id/cursorColorTextView"
         android:layout_below="@+id/textView2"
         android:text="X/Y"
@@ -52,6 +65,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
+        android:layout_marginLeft="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="Cursor color:"
@@ -62,6 +76,7 @@
         android:id="@+id/cursorColorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/cursorCoordTextView"
         android:text="RED" />
@@ -69,6 +84,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:text="Temperature:" />
 
@@ -76,13 +92,24 @@
         android:id="@+id/temperatureTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:text="28Grad" />
+
+
+    <TextView
+        android:id="@+id/val_firebase"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:text="___" />
 
     <TextView
         android:id="@+id/exceptionTextView"
         android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:text="___" />
+
 
 
 </LinearLayout>

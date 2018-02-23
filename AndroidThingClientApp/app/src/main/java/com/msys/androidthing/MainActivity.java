@@ -47,6 +47,8 @@ import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener{
 
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
 
 
-        final IProfile profile = new ProfileDrawerItem().withName("Chichikolon").withEmail("virgiledjimgou@gmail.com").withIcon("https://github.com/chichikolon/IoT_SmartHome_Cloud").withIdentifier(100);
+        final IProfile profile = new ProfileDrawerItem().withName("Armand Djiokeng").withEmail("ArmandDjiokeng@gmail.com").withIcon("https://github.com/chichikolon/IoT_SmartHome_Cloud").withIdentifier(100);
 
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()
@@ -140,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements
                             if (drawerItem.getIdentifier() == 1) {
 
                             } else if (drawerItem.getIdentifier() == 2) {
-                                intent = new Intent(MainActivity.this, RealTimeDbActivity.class);
+                                intent = new Intent(MainActivity.this, SensorEventsRasp.class);
                             } else if (drawerItem.getIdentifier() == 3) {
                                 intent = new Intent(MainActivity.this, StorageActivity.class);
                             } else if (drawerItem.getIdentifier() == 4) {
@@ -247,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements
             public void onClick(View view) {
                 String timeInterval = time_interval_edit.getText().toString();
                 if(timeInterval != null){
-                    createUser(timeInterval);
+                    UpdateMatrix(timeInterval);
                 }
             }
         });
@@ -255,19 +257,35 @@ public class MainActivity extends AppCompatActivity implements
 
     private String userId;
 
-    private void createUser(String timeInterval) {
+    private void UpdateMatrix(String timeInterval) {
         // TODO
         // In real apps this userId should be fetched
         // by implementing firebase auth
 //       userId = databaseReference.push().getKey();
 
-        int timeValue = Integer.parseInt(timeInterval);
-        LightStatus lightStatus = new LightStatus(timeValue);
+        try{
 
-        databaseReference.setValue(lightStatus);
+            int timeValue = Integer.parseInt(timeInterval);
+            LightStatus lightStatus = new LightStatus(timeValue);
+            // databaseReference.setValue(lightStatus);
+            updateMatrix("MatrixLed" , Integer.toString(timeValue));
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
 
 //        databaseReference.child(userId).setValue(lightStatus);
 
+    }
+
+
+    public void updateMatrix(String Label_value , String  Value_to_send){
+
+        DatabaseReference ReadVal_on_Cloud;
+        ReadVal_on_Cloud = FirebaseDatabase.getInstance().getReference();
+        HashMap map = new HashMap();
+        map.put(Label_value , Value_to_send);
+        ReadVal_on_Cloud.updateChildren(map);
     }
 
     private void confirmLogoutDialog() {

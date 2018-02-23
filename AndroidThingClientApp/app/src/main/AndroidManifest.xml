@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name="com.msys.androidthing.RealTimeDbActivity"
+            android:name="com.msys.androidthing.SensorEventsRasp"
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme.NoActionBar">
 

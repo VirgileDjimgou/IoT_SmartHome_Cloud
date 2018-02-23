@@ -12,6 +12,7 @@ import com.google.android.things.userdriver.UserSensorReading;
 import java.io.IOException;
 import java.util.UUID;
 
+
 /**
  * Driver for:
  * I2C  Address  0x5f: 		HTS221		Humidity/Temperature

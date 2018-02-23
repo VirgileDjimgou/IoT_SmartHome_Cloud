@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.google.android.things.pio.Gpio;
 import com.google.android.things.pio.PeripheralManagerService;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.android.things.contrib.driver.sensehat.SenseHat;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 // import sense hat lib  ...
 // import the SenseHat driver
@@ -45,7 +47,9 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        FirebaseApp.initializeApp(this.getApplicationContext());
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        updateTemp_and_Hummidity();
         getDataInit();
         try{
             this.display = SenseHat.openDisplay();
@@ -96,6 +100,8 @@ public class HomeActivity extends AppCompatActivity {
     };
 
 
+
+
     private void getDataInit() {
         ValueEventListener dataListener = new ValueEventListener() {
             @Override
@@ -124,4 +130,15 @@ public class HomeActivity extends AppCompatActivity {
         };
         mDatabase.addValueEventListener(dataListener);
     }
+
+
+    public void updateTemp_and_Hummidity(){
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("IOT_Device_RPi3").child("Sensors");
+        HashMap map = new HashMap();
+        map.put("Hum_Sensor_1" , "23");
+        mDatabase.updateChildren(map);
+    }
+
+
 }

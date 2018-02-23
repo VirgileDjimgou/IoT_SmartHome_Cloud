@@ -75,7 +75,6 @@ public class LoginActivity extends AppCompatActivity implements
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btn_email_login = (Button) findViewById(R.id.btn_email_login);
-        btn_anonymous = (Button) findViewById(R.id.btn_anonymous);
         signInButton = (SignInButton) findViewById(R.id.sign_in_google_button);
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.fb_login_button);
@@ -106,29 +105,6 @@ public class LoginActivity extends AppCompatActivity implements
             }
         });
 
-        btn_anonymous.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProgressDialog();
-                auth.signInAnonymously()
-                        .addOnSuccessListener(LoginActivity.this, new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                Log.d(TAG, "signInAnonymously:SUCCESS");
-                                hideProgressDialog();
-                                updateUI(authResult.getUser());
-                            }
-                        })
-                        .addOnFailureListener(LoginActivity.this, new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception exception) {
-                                Log.e(TAG, "signInAnonymously:FAILURE", exception);
-                                hideProgressDialog();
-                                updateUI(null);
-                            }
-                        });
-            }
-        });
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();

@@ -3,12 +3,12 @@
  */
 package com.fh.androidthing;
 
-import com.google.firebase.database.IgnoreExtraProperties;
+// import com.google.firebase.database.IgnoreExtraProperties;
 
 /**
  * Created by chichikolon on 01/23/2018.
  */
-@IgnoreExtraProperties
+// @IgnoreExtraProperties
 public class Config {
 
     private int delay;

@@ -1,27 +1,58 @@
 {
   "project_info": {
-    "project_number": "116003465817",
-    "firebase_url": "https://iot-pforzheim.firebaseio.com",
-    "project_id": "iot-pforzheim",
-    "storage_bucket": "iot-pforzheim.appspot.com"
+    "project_number": "236411372473",
+    "firebase_url": "https://iot-pforzheim-bb741.firebaseio.com",
+    "project_id": "iot-pforzheim-bb741",
+    "storage_bucket": "iot-pforzheim-bb741.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:116003465817:android:05e625dcf6d7752b",
+        "mobilesdk_app_id": "1:236411372473:android:05e625dcf6d7752b",
         "android_client_info": {
           "package_name": "com.msys.androidthing"
         }
       },
       "oauth_client": [
         {
-          "client_id": "116003465817-kck4ss8m3q7lm742g1svds24jf6ghpmo.apps.googleusercontent.com",
+          "client_id": "236411372473-n4enj1ell8ohl22179gk7ih9athic8dd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBH1-GlDQts-Ahw6Y4QqXxTp9pVZyykEn4"
+          "current_key": "AIzaSyDkZFIiiSvA0LMxuWOlB40aJCKnA2P7JWo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236411372473:android:0d0da29167bbb14e",
+        "android_client_info": {
+          "package_name": "com.fh.androidthing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236411372473-n4enj1ell8ohl22179gk7ih9athic8dd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkZFIiiSvA0LMxuWOlB40aJCKnA2P7JWo"
         }
       ],
       "services": {
