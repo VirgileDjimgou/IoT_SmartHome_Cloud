@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.msys.androidthing;
+package com.fh.androidthing;
 
 import android.os.Build;
 
