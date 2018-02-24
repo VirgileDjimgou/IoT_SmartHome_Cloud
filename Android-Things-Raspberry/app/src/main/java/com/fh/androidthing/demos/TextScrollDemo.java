@@ -17,6 +17,7 @@ import java.io.IOException;
 
 public class TextScrollDemo {
 
+    private int TimerSleep = 100;
 
     public TextScrollDemo(final SensorManager sensorManager, final AssetManager assetmanager) throws IOException {
 
@@ -51,7 +52,7 @@ public class TextScrollDemo {
                                 }
                             }
                             SenseHat.getInstance().getLedMatrix().draw(targetBitmap);
-                            Thread.sleep(100);
+                            Thread.sleep(TimerSleep);
                         }
                     } while (true);
                 } catch (Exception e) {
@@ -60,5 +61,16 @@ public class TextScrollDemo {
                 }
             }
         }).start();
+
+
+
+    }
+
+
+    public  void setGearScrolling(int Value){
+
+        /// affect the new Vallue of the Threa Sleep in Thread  ...
+        TimerSleep = Value;
+
     }
 }

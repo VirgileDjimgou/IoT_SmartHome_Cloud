@@ -136,7 +136,9 @@ public class demoMain extends Activity {
 
             /** Text-Scrolling
              */
-            // this.textScrollDemo = new TextScrollDemo(sensorManager, this.getAssets());
+            this.textScrollDemo = new TextScrollDemo(sensorManager, this.getAssets());
+            // Set the new Valeur of the the Tread to Text ...
+            this.textScrollDemo.setGearScrolling(100);
 
             // Simple Joystick demo
 
@@ -220,6 +222,24 @@ public class demoMain extends Activity {
                     }
                     System.out.println(config.getDelay());
                     intervalBetweenBlinksMs = config.getDelay();
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+
+
+                // get the new Gear of the Scrolling  ..
+
+                int ValMatrixLed = 100;
+                try{
+
+                    if(dataSnapshot.child("MatrixLed")!=null){
+                        ValFireBaseView.setText(dataSnapshot.child("MatrixLed").getValue().toString());
+                        ValMatrixLed = Integer.parseInt(dataSnapshot.child("MatrixLed").getValue().toString());
+                    }
+                    System.out.println(config.getDelay());
+                    intervalBetweenBlinksMs = config.getDelay();
+                    textScrollDemo.setGearScrolling(ValMatrixLed);
+
                 }catch(Exception ex){
                     ex.printStackTrace();
                 }
