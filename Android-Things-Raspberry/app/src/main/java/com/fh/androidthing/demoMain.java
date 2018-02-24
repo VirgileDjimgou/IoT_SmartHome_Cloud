@@ -115,13 +115,13 @@ public class demoMain extends Activity {
 
             // ********************
             SensorManager sensorManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
-            // SenseHat senseHat = SenseHat.init(sensorManager);
+            SenseHat senseHat = SenseHat.init(sensorManager);
             // final LedMatrix ledMatrix = senseHat.getLedMatrix();
             // ledMatrix.draw(Color.RED);    // trun off
 
             // Init Firebase and post data to the Cloud  ...      FirebaseApp.initializeApp(this.getApplicationContext());
             mDatabase = FirebaseDatabase.getInstance().getReference();
-            this.HumiditySensor = new HumidityTemperatureDemo(sensorManager);
+            this.HumiditySensor = new HumidityTemperatureDemo(sensorManager , senseHat);
             updateTemp_and_Hummidity("Ip Device  . " , myIP );
             updateTemp_and_Hummidity("Latitude" , "56.35");
             updateTemp_and_Hummidity("Longitude"  , "88,23");
@@ -129,6 +129,10 @@ public class demoMain extends Activity {
             //
 
             getDataInit();
+
+
+            final LedMatrix ledMatrix = senseHat.getLedMatrix();
+            ledMatrix.draw(Color.MAGENTA);    // trun off
 
             /** Text-Scrolling
              */

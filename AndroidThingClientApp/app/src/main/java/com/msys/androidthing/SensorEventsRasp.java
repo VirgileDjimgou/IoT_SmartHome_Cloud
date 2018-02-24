@@ -50,6 +50,9 @@ public class SensorEventsRasp extends AppCompatActivity {
                 Log.e(TAG, "Temperatur Raspberry  updated");
 
                 String TemperaturRaspberry  = dataSnapshot.getValue(String.class);
+                Temperatur.setText("Temp : " + TemperaturRaspberry);
+                Temperatur.setPercent(Math.round(Float.parseFloat(TemperaturRaspberry)));
+
 
                 // update toolbar title
             }
@@ -74,10 +77,17 @@ public class SensorEventsRasp extends AppCompatActivity {
 
                 String HumidityRaspberry  = dataSnapshot.getValue(String.class);
 
+                try{
+
+                    Humidity.setText("HUM : " + HumidityRaspberry);
+                    Humidity.setPercent(Math.round(Float.parseFloat(HumidityRaspberry)));
+
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+
                 // update toolbar title
             }
-
-
 
             @Override
             public void onCancelled(DatabaseError error) {

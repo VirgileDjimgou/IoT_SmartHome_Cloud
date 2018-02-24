@@ -14,9 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-
-
         <LinearLayout
 
             android:layout_width="match_parent"
@@ -33,7 +30,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="100dp"
                 android:text="HUM :"
-                app:unit="m/s"
+                app:tikeStrArray="@array/meter"
+                app:unit="val"
                 app:progressStrokeWidth="16dp"
                 app:endProgressColor="@color/colorPrimaryDark"
                 app:startProgressColor="@color/colorAccent"
@@ -42,9 +40,6 @@
                 app:startNumber="100"
                 app:maxNumber="1900"
                 app:centerCircleColor="@color/colorPrimary"/>
-
-
-
 
 
         </LinearLayout>
@@ -68,7 +63,8 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="10dp"
                 android:text="Temp : "
-                app:unit="m/s"
+                app:tikeStrArray="@array/meter"
+                app:unit="°C"
                 app:progressStrokeWidth="16dp"
                 app:endProgressColor="@color/colorPrimaryDark"
                 app:startProgressColor="@color/colorAccent"

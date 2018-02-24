@@ -1,4 +1,15 @@
 <resources>
+
+    <string-array name="meter">
+        <item>100KB</item>
+        <item>400KB</item>
+        <item>700KB</item>
+        <item>1M</item>
+        <item>1.3M</item>
+        <item>1.6M</item>
+        <item>1.9M</item>
+    </string-array>
+
     <string name="app_name">Pforzheim IoT-cloud Client</string>
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>

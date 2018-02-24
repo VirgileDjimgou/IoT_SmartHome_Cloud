@@ -12,8 +12,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Switch;
 
+import com.anderson.dashboardview.view.DashboardView;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements
     private Drawer result = null;
     private Button btnSave;
     private Switch aSwitch;
+    private SeekBar seekBar;
+    private DashboardView dashboardView ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,12 +78,6 @@ public class MainActivity extends AppCompatActivity implements
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         btnSave = (Button) findViewById(R.id.btn_save);
-        time_interval_edit = (EditText) findViewById(R.id.time_interval);
-        aSwitch = (Switch) findViewById(R.id.switchblink);
-
-        toolbar.setTitle(getString(R.string.app_name));
-        setSupportActionBar(toolbar);
-
 
         final IProfile profile = new ProfileDrawerItem().withName("Armand Djiokeng").withEmail("ArmandDjiokeng@gmail.com").withIcon("https://github.com/chichikolon/IoT_SmartHome_Cloud").withIdentifier(100);
 
@@ -170,6 +168,27 @@ public class MainActivity extends AppCompatActivity implements
                 .withShowDrawerOnFirstLaunch(true)
                 .build();
 
+        // Init Dashboard View
+        this.dashboardView = (DashboardView) findViewById(R.id.dashboard) ;
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                dashboardView.setPercent(progress);
+                updateMatrix("MatrixLed" , Integer.toString(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
         //if you have many different types of DrawerItems you can magically pre-cache those items to get a better scroll performance
         //make sure to init the cache after the DrawerBuilder was created as this will first clear the cache to make sure no old elements are in
         //RecyclerViewCacheUtil.getInstance().withCacheSize(2).init(result);
@@ -233,7 +252,6 @@ public class MainActivity extends AppCompatActivity implements
                 String appTitle = dataSnapshot.getValue(String.class);
 
                 // update toolbar title
-                getSupportActionBar().setTitle(appTitle);
             }
 
             @Override
@@ -247,10 +265,7 @@ public class MainActivity extends AppCompatActivity implements
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String timeInterval = time_interval_edit.getText().toString();
-                if(timeInterval != null){
-                    UpdateMatrix(timeInterval);
-                }
+
             }
         });
     }

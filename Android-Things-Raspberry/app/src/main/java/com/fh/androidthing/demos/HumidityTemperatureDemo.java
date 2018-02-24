@@ -26,11 +26,11 @@ public class HumidityTemperatureDemo {
 
     private final SensorManager sensorManager;
 
-    public HumidityTemperatureDemo(SensorManager sensorManager ) throws IOException {
+    public HumidityTemperatureDemo(SensorManager sensorManager ,  SenseHat senseHat ) throws IOException {
 
         this.sensorManager = sensorManager;
 
-        SenseHat senseHat = SenseHat.init(sensorManager);
+        // senseHat = SenseHat.init(sensorManager);
 
         SensorEventListener humidityListener = new SensorEventListener() {
             @Override
@@ -60,7 +60,6 @@ public class HumidityTemperatureDemo {
                 System.out.println("TEMP-ACUU:" + sensor + " acc:''" + accuracy);
             }
         };
-
 
         senseHat.addHumidityTempatureSensorListener(humidityListener, temperatureListener);
 
