@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ public class SensorEventsRasp extends AppCompatActivity {
     private static final String TAG = SensorEventsRasp.class.getSimpleName();
     private TextView txtDetails;
     private EditText inputName, inputEmail;
-    private Button btnSave;
+    private Button btn_action_return;
     private DashboardView Humidity;
     private DashboardView Temperatur;
 
@@ -36,9 +37,15 @@ public class SensorEventsRasp extends AppCompatActivity {
         setContentView(R.layout.sensor_events_rpi3);
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-        // get reference to 'users' node
-        databaseReference = firebaseDatabase.getReference("employee");
 
+        this.btn_action_return = (Button) findViewById(R.id.btn_action);
+        this.btn_action_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+
+            }
+        });
         // store app title to 'app_title' node
         this.Humidity = (DashboardView) findViewById(R.id.hum);
         this.Temperatur = (DashboardView) findViewById(R.id.TEMP);
