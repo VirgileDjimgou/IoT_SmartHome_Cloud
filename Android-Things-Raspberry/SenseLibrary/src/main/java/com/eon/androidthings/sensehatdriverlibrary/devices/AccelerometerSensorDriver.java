@@ -9,6 +9,7 @@ import com.google.android.things.userdriver.UserSensor;
 import com.google.android.things.userdriver.UserSensorDriver;
 import com.google.android.things.userdriver.UserSensorReading;
 
+
 import java.io.IOException;
 import java.util.UUID;
 
@@ -51,7 +52,6 @@ public class AccelerometerSensorDriver extends UserSensorDriver implements AutoC
     }
 
     // UserSensorDriver
-    @Override
     public UserSensorReading read() throws IOException {
         return new UserSensorReading(new float[]{
 // TODO @@@ hier gehts weiter

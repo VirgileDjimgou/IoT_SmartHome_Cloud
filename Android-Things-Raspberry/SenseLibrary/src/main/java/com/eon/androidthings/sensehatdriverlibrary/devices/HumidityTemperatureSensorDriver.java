@@ -5,6 +5,12 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
 import com.google.android.things.userdriver.UserDriverManager;
+
+// import com.google.android.things.userdriver.UserSensor;
+// import com.google.android.things.userdriver.UserSensorDriver;
+// import com.google.android.things.userdriver.UserSensorReading;
+
+
 import com.google.android.things.userdriver.UserSensor;
 import com.google.android.things.userdriver.UserSensorDriver;
 import com.google.android.things.userdriver.UserSensorReading;
@@ -156,12 +162,12 @@ public class HumidityTemperatureSensorDriver implements AutoCloseable {
             return this.mUserSensor;
         }
 
-        @Override
+        // @Override
         public UserSensorReading read() throws IOException {
             return new UserSensorReading(new float[]{HumidityTemperatureSensorDriver.this.sensor.readHumidity()});
         }
 
-        @Override
+        // @Override
         public void setEnabled(boolean enabled) throws IOException {
             this.mEnabled = enabled;
             HumidityTemperatureSensorDriver.this.maybeSleep();
@@ -204,12 +210,12 @@ public class HumidityTemperatureSensorDriver implements AutoCloseable {
             return this.mUserSensor;
         }
 
-        @Override
+        // @Override
         public UserSensorReading read() throws IOException {
             return new UserSensorReading(new float[]{HumidityTemperatureSensorDriver.this.sensor.readTemperature()});
         }
 
-        @Override
+        // @Override
         public void setEnabled(boolean enabled) throws IOException {
             this.mEnabled = enabled;
             HumidityTemperatureSensorDriver.this.maybeSleep();

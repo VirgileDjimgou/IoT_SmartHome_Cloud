@@ -2,6 +2,7 @@ package com.eon.androidthings.sensehatdriverlibrary.utils;
 
 import com.google.android.things.pio.I2cDevice;
 import com.google.android.things.pio.PeripheralManagerService;
+// import com.google.android.things.pio.PeripheralManager;
 
 import java.io.IOException;
 import java.util.HashMap;
