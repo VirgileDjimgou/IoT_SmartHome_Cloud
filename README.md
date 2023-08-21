@@ -1,6 +1,8 @@
 # IoT_SmartHome_Cloud
 (FH Aalen) Cloud-IoT Projekt : Entwicklung einer Android App zur Visualisierung von emulierten Sensordaten durch einen cloud Umgebung..
 
+![Alt text](smart_home-1.PNG)
+
 <span id="result_box" class="anchor"></span>Dieser Dokumentation
 beschreibt eine Fallstudie zum Erstellen eines Smart Home mit Raspberry
 Pi-Gerät und die in einen Cloud Umgebung integriet ist . Wir haben
@@ -134,21 +136,10 @@ https://firebase.google.com/.
 
 8\. Gehen Sie zum Abschnitt Regeln und ändern Sie die Regeln wie folgt
 
-"rules": {
+"rules": { ".read": "true", ".write": "true" }
 
- 
+![Alt text](firebaseread-1.PNG)
 
-".read": "true",
-
- 
-
-".write": "true"
-
- 
-
-}
-
- 
 
 }
 
