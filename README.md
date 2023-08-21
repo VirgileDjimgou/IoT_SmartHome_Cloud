@@ -9,12 +9,9 @@ eine bekannte Service von Cloud Anbieter Google Cloud Platform (GCP) als
 Backend-Dienst zum Speichern der Daten verwendet (der in Echtzeit mit
 allen authentifizierten Geräten synchronisiert wird). Der Projekt gibt
 eine kurze Beschreibung des aktuellen Trends bei IoT-Geräten (populäre
-IoT-Plattformen wie Raspberry Pi, Arduino usw.). Der Artikel erwähnt
+IoT-Plattformen wie Raspberry Pi, Arduino usw.). Diese Projekt erwähnt
 auch eine kurze Einführung in AndroidThings OS (von Google
-bereitgestellt), das für IoT-Geräte entwickelt wurde und das
-Java-Framework für Anwendungsentwickler unterstützt, um IoT-Anwendungen
-mit Java zu entwickeln. Wir sprechen auch über Firebase von GCP , das
-als Backend zum Speichern von Daten verwendet wurde.
+bereitgestellt), das für IoT-Geräte entwickelt wurde und das Java-Framework sowie Firebase als  Backend as a Service (BAAS) für Anwendungsentwickler unterstützt, um IoT-Anwendungen mit Java oder Kotlin zu entwickeln
 
 -   AndroidThings
     -------------
@@ -42,17 +39,7 @@ Android-APIs, die von Android Things unterstützt werden. Viele
 Programmierer von Mobilgeräten und Geräten, mit denen ich konfrontiert
 bin, haben Probleme mit der serverseitigen Programmierung. Firebase kann
 wirklich helfen, diese Lücke zu überbrücken und es einfacher zu machen.\
-Es wird interessant sein zu sehen, wie Entwickler ihre
-Offline-Funktionen nutzen. Wenn Sie neu bei IoT sind oder allgemein
-jedes Gerät, das Daten sammelt und es über Netzwerke übertragen muss,
-ist die goldene Regel, dass keine Netzwerkverbindung angenommen werden
-kann. Daher müssen Sie die Daten offline sammeln und wenn das Netzwerk
-verfügbar ist, übertragen Sie dies auf Ihren Server. Firebase mit seiner
-Offline-Funktion kann das für viele Entwickler wirklich vereinfachen.\
-Firebase hat eine Menge Funktionen wie Real-Time-Datenbank,
-Authentifizierung, Cloud Messaging, Storage, Hosting, Testlabor und
-Analytics, aber ich werde nur Authentifizierung, Real-Time-Datenbank
-verwenden.
+
 
 -   **Authentifizierung**
 
